@@ -90,9 +90,7 @@ CREATE TABLE `loan_plan` (
 --
 
 INSERT INTO `loan_plan` (`id`, `months`, `interest_percentage`, `penalty_rate`) VALUES
-(1, 36, 8, 3),
-(2, 24, 5, 2),
-(3, 27, 6, 2);
+(1, 36, 8, 3);
 
 -- --------------------------------------------------------
 

@@ -12,7 +12,8 @@
 				<a href="index.php?page=plan" class="nav-item nav-plan"><span class='icon-field'><i class="fa fa-list-alt"></i></span> Set Loan Rate</a>	
 				<a href="index.php?page=loan_type" class="nav-item nav-loan_type"><span class='icon-field'><i class="fa fa-th-list"></i></span> Divdents</a>		
 				<?php if($_SESSION['login_type'] == 1): ?>
-				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Members</a>
+				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> users</a>
+				<a href="index.php?page=memberplan" class="nav-item nav-memberplan"></i> Members</a>
 				
 			<?php endif; ?>
 		</div>

@@ -9,16 +9,40 @@
 			<form action="" id="manage-plan">
 				<div class="card">
 					<div class="card-header">
-						   Plan's Form
+						   Add member
 				  	</div>
 					<div class="card-body">
+
+
+
+
+
+<input type="hidden" name="id">
+							<div class="form-group">
+								<label class="control-label">Member Name</label>
+								<input type="name" name="monnths" id="" class="form-control text-left">
+
+								<div class="input-group-append">
+								    <span class="input-group-text">As on ID</span>
+								  </div>
+							</div>
+
+
+
 							<input type="hidden" name="id">
 							<div class="form-group">
-								<label class="control-label">Plan (months)</label>
-								<input type="number" name="months" id="" class="form-control text-right">
+								<label class="control-label">Member ID</label>
+								<input type="number" name="months" id="" class="form-control text-left">
 							</div>
+
+
+
+
+
+
+
 							<div class="form-group">
-								<label class="control-label">Interest</label>
+								<label class="control-label">Shares</label>
 								<div class="input-group">
 								  <input type="number" step="any" min="0" max="100" class="form-control text-right" name="interest_percentage" aria-label="Interest">
 								  <div class="input-group-append">
@@ -27,11 +51,11 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label">Monthly Over due's Penalty</label>
+								<label class="control-label">Saving</label>
 								<div class="input-group">
-								  <input type="number" step="any" min="0" max="100" class="form-control text-right" aria-label="Penalty percentage" name="penalty_rate">
+								  <input type="number" step="any" min="0" max="100000" class="form-control text-right" aria-label="Penalty percentage" name="penalty_rate">
 								  <div class="input-group-append">
-								    <span class="input-group-text">%</span>
+								    <span class="input-group-text">KSh</span>
 								  </div>
 								</div>
 							</div>
@@ -43,7 +67,7 @@
 					<div class="card-footer">
 						<div class="row">
 							<div class="col-md-12">
-								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
+								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Add Details</button>
 								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="_reset()"> Cancel</button>
 							</div>
 						</div>
@@ -54,14 +78,14 @@
 			<!-- FORM Panel -->
 
 			<!-- Table Panel -->
-			<!--   <div class="col-md-8">
+			<div class="col-md-8">
 				<div class="card">
 					<div class="card-body">
 						<table class="table table-bordered table-hover">
 							<thead>
 								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">Plan</th>
+									<th class="text-center">Unique ID</th>
+									<th class="text-center">Description</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -73,10 +97,10 @@
 									$months = $row['months'];
 									$months = $months / 12;
 									if($months < 1){
-										$months = $row['months']. " months";
+										$months = $row['months']. " ";
 									}else{
 										$m = explode(".", $months);
-										$months = $m[0] . " yrs.";
+										$months = $m[0] . " ";
 										if(isset($m[1])){
 											$months .= " and ".number_format(12 * ($m[1] /100 ),0)."month/s";
 										}
@@ -85,9 +109,9 @@
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
-										 <p>Years/Month: <b><?php echo $months ?></b></p>
-										 <p><small>Interest: <b><?php echo $row['interest_percentage']."%" ?></b></small></p>
-										 <p><small>Over dure Penalty: <b><?php echo $row['penalty_rate']."%" ?></b></small></p>
+										 <p>National ID <b><?php echo $months ?></b></p>
+										 <p><small>Shares: <b><?php echo $row['interest_percentage']."%" ?></b></small></p>
+										 <p><small>Savings: <b><?php echo $row['penalty_rate']."Ksh" ?></b></small></p>
 									</td>
 									<td class="text-center">
 										<button class="btn btn-sm btn-primary edit_plan" type="button" data-id="<?php echo $row['id'] ?>" data-months="<?php echo $row['months'] ?>" data-interest_percentage="<?php echo $row['interest_percentage'] ?>" >Edit</button>
@@ -98,7 +122,7 @@
 							</tbody>
 						</table>
 					</div>
-				</div> -->
+				</div>
 			</div>
 			<!-- Table Panel -->
 		</div>
@@ -165,7 +189,7 @@
 		end_load()
 	})
 	$('.delete_plan').click(function(){
-		_conf("Are you sure to delete this Plan?","delete_plan",[$(this).attr('data-id')])
+		_conf("Are you sure to delete this Member Details?","delete_plan",[$(this).attr('data-id')])
 	})
 	function displayImg(input,_this) {
     if (input.files && input.files[0]) {
