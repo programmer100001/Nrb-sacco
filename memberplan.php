@@ -42,7 +42,7 @@
 
 
 							<div class="form-group">
-								<label class="control-label">Shares</label>
+								<label class="control-label">Interest P.A</label>
 								<div class="input-group">
 								  <input type="number" step="any" min="0" max="100" class="form-control text-right" name="interest_percentage" aria-label="Interest">
 								  <div class="input-group-append">
@@ -68,7 +68,10 @@
 						<div class="row">
 							<div class="col-md-12">
 								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Add Details</button>
+
 								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="_reset()"> Cancel</button>
+
+								
 							</div>
 						</div>
 					</div>
@@ -110,7 +113,7 @@
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
 										 <p>National ID <b><?php echo $months ?></b></p>
-										 <p><small>Shares: <b><?php echo $row['interest_percentage']."%" ?></b></small></p>
+										 <p><small>Interet P.A: <b><?php echo $row['interest_percentage']."%" ?></b></small></p>
 										 <p><small>Savings: <b><?php echo $row['penalty_rate']."Ksh" ?></b></small></p>
 									</td>
 									<td class="text-center">
