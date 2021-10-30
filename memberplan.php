@@ -89,7 +89,7 @@
 								<tr>
 									<th class="text-center">Unique ID</th>
 									<th class="text-center">Description</th>
-									<th class="text-center">Action</th>
+									<th class="text-center">EDIT</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -98,16 +98,9 @@
 								$plan = $conn->query("SELECT * FROM loan_plan order by id asc");
 								while($row=$plan->fetch_assoc()):
 									$months = $row['months'];
-									$months = $months / 12;
-									if($months < 1){
-										$months = $row['months']. " ";
-									}else{
-										$m = explode(".", $months);
-										$months = $m[0] . " ";
-										if(isset($m[1])){
-											$months .= " and ".number_format(12 * ($m[1] /100 ),0)."month/s";
-										}
-									}
+									
+									
+									
 								?>
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
